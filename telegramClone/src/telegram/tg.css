@@ -1,160 +1,399 @@
-*{ 
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    list-style-type: none;
-    font-family: sans-serif;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  font-family: sans-serif;
+}
+
+body {
+    height: 100vh;
+    overflow-y: hidden;
 }
 
 .tgCon {
-    width: 100%;
-    height: 100vh;
-    background: #0e1621;
-    display: flex;
+  width: 100%;
+  background: #0e1621;
+  display: flex;
 }
 
 .tgCon .tgLeft {
-    height: 100vh;
-    width: 80px;
-    display: flex;
+  height: 100vh;
+  width: 80px;
+  display: flex;
 }
 
 .tgCon .tgLeft .tgLeft_Btns {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .tgCon .tgLeft .tgLeft_Btns button .ix {
-    color: #768c9e;
+  color: #768c9e;
 }
 
 .tgCon .tgLeft .tgLeft_Btns button {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    width: 80px;
-    height: 80px;
-    justify-content: center;
-    gap: 10px;
-    background-color: transparent;
-    border: none;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  justify-content: center;
+  gap: 10px;
+  background-color: transparent;
+  border: none;
 }
 
 .tgCon .tgLeft .tgLeft_Btns button:hover {
-    background: #25303e;
-    cursor: pointer;
+  background: #25303e;
+  cursor: pointer;
 }
 
 .tgCon .tgLeft .tgLeft_Btns .active {
-    background: #25303e;
-    cursor: pointer;
-    color: #5eb5f7;
+  background: #25303e;
+  cursor: pointer;
+  color: #5eb5f7;
 }
 
 .tgCon .tgLeft .tgLeft_Btns .active .ix {
-    color: #5eb5f7;
+  color: #5eb5f7;
 }
 
 .tgCon .tgLeft .tgLeft_Btns .active span {
-    color: #5eb5f7;
+  color: #5eb5f7;
 }
 
 .tgCon .tgLeft .tgLeft_Btns button span {
-    color: #768c9e;
-    font-size: 16px;
-    font-weight: 500;
+  color: #768c9e;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .tgCon .tgUsers {
-    width: 420px;
-    height: 100vh;
-    background-color: #17212b;
+  width: 420px;
+  height: 100vh;
+  background-color: #17212b;
+  border-right: 1px solid black;
 }
 
 .tgCon .tgUsers .tgUsersSerach {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
 }
 
 .tgCon .tgUsers .tgUsersSerach input {
-    width: 95%;
-    height: 60%;
-    background-color: #242f3d;
-    border: none;
-    border-radius: 5px;
-    padding-left: 6px;
+  width: 95%;
+  height: 60%;
+  background-color: #242f3d;
+  border: none;
+  border-radius: 5px;
+  padding-left: 6px;
 }
 
 .tgCon .tgUsers .tgUsersSerach input::placeholder {
-    font-size: 17px;
-    color: #616a6c;
+  font-size: 17px;
+  color: #616a6c;
 }
 
 .tgCon .tgUsers .tgUsers_users {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    cursor: pointer;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
 }
 
 .tgCon .tgUsers .tgUsers_users .tgUsers_user {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 10px;
-    height: 80px;
-    width: 100%;
-    gap: 20px;
-    background-color: #2b5278;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  height: 80px;
+  width: 100%;
+  gap: 20px;
+  background-color: #2b5278;
 }
 
 .tgCon .tgUsers .tgUsers_users .tgUsers_user img {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
 }
 
 .tgCon .tgUsers .tgUsers_users .tgUsers_user .tgUsers_users_Info {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.tgCon .tgUsers .tgUsers_users .tgUsers_user .tgUsers_users_Info .tgUsers_users_Info_Left {
+.tgCon
+  .tgUsers
+  .tgUsers_users
+  .tgUsers_user
+  .tgUsers_users_Info
+  .tgUsers_users_Info_Left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tgCon
+  .tgUsers
+  .tgUsers_users
+  .tgUsers_user
+  .tgUsers_users_Info
+  .tgUsers_users_Info_Left
+  .tgUsers_users_Info_Left_Name {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: rgb(255, 255, 255);
+}
+
+.tgCon
+  .tgUsers
+  .tgUsers_users
+  .tgUsers_user
+  .tgUsers_users_Info
+  .tgUsers_users_Info_Left
+  .tgUsers_users_Info_Left_massage {
+  color: rgba(255, 255, 255, 0.767);
+}
+
+.tgCon
+  .tgUsers
+  .tgUsers_users
+  .tgUsers_user
+  .tgUsers_users_Info
+  .tgUsers_users_Info_Right {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.tgCon
+  .tgUsers
+  .tgUsers_users
+  .tgUsers_user
+  .tgUsers_users_Info
+  .tgUsers_users_Info_Right
+  .tgUsers_users_Info_Right_Time {
+  color: #fff;
+  font-size: 17px;
+}
+
+.tgCon .tgChat {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  position: relative;
+}
+
+.tgCon .tgChat .tgChat_userInfo {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 20px;
+  background-color: #17212b;
+  align-items: center;
+}
+
+.tgCon .tgChat .tgChat_userInfo .tgChat_userInfo_userName {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.tgCon
+  .tgChat
+  .tgChat_userInfo
+  .tgChat_userInfo_userName
+  .tgChat_userInfo_userName_name {
+  font-size: 20px;
+  color: white;
+}
+
+.tgCon
+  .tgChat
+  .tgChat_userInfo
+  .tgChat_userInfo_userName
+  .tgChat_userInfo_userName_online {
+  color: #455464;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+}
+
+.tgCon .tgChat .tgChat_userInfo .tgChatCallBtns {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.tgCon .tgChat .tgChat_userInfo .tgChatCallBtns button {
+  border: none;
+  background-color: transparent;
+  color: #6c7883;
+  font-size: 26px;
+}
+
+.tgCon .tgChat .tgChatMassage {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    align-items: start;
+    flex-grow: 1;
+    gap: 15px;
+    padding: 10px 20px;
+}
+
+.tgCon .tgChat .tgChatMassage .user {
+    display: flex;
+    gap: 5px;
+}
+
+
+.tgCon .tgChat .tgChatMassage .user img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.tgCon .tgChat .tgChatMassage .user .chat {
+    padding: 5px 10px;
+    background-color: #2b5278;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
     gap: 10px;
 }
 
-.tgCon .tgUsers .tgUsers_users .tgUsers_user .tgUsers_users_Info .tgUsers_users_Info_Left .tgUsers_users_Info_Left_Name {
-    font-size: 19px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: rgb(255, 255, 255);
+.tgCon .tgChat .tgChatMassage .user .chat .massage {
+    font-size: 20px;
+    color: #fff;
 }
 
-.tgCon .tgUsers .tgUsers_users .tgUsers_user .tgUsers_users_Info .tgUsers_users_Info_Left .tgUsers_users_Info_Left_massage {
-    color: rgba(255, 255, 255, 0.767);
-}
-
-
-.tgCon .tgUsers .tgUsers_users .tgUsers_user .tgUsers_users_Info .tgUsers_users_Info_Right {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+.tgCon .tgChat .tgChatMassage .user .chat .timeandcheck {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
+    transform: translateY(5px);
 }
 
-.tgCon .tgUsers .tgUsers_users .tgUsers_user .tgUsers_users_Info .tgUsers_users_Info_Right .tgUsers_users_Info_Right_Time {
+.tgCon .tgChat .tgChatMassage .user .chat .timeandcheck span {
+    color: #7a9396;
+    font-size: 18px;
+}
+
+.tgCon .tgChat .tgChatMassage .user .chat .timeandcheck button {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    color: #60ade9;
+}
+
+.tgCon .tgChat .tgChatMassage .user2 {
+    display: flex;
+    gap: 5px;
+}
+
+
+.tgCon .tgChat .tgChatMassage .user2 img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.tgCon .tgChat .tgChatMassage .user2 .chat {
+    padding: 5px 10px;
+    background-color: #182533;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tgCon .tgChat .tgChatMassage .user2 .chat .massage {
+    font-size: 20px;
     color: #fff;
-    font-size: 17px;
+}
+
+.tgCon .tgChat .tgChatMassage .user2 .chat .timeandcheck {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transform: translateY(4px);
+    padding-right: 5px;
+}
+
+.tgCon .tgChat .tgChatMassage .user2 .chat .timeandcheck span {
+    color: #7a9396;
+    font-size: 18px;
+}
+
+.tgCon .tgChat .tgChatMassage .user2 .chat .timeandcheck button {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    color: #60ade9;
+}
+
+.tgCon .tgChat .tgChatMassage .chst {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tgCon .tgChat .sendMassage {
+    height: 60px;
+    background-color: #17212b;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+/* .tgCon .tgChat .sendMassage #file {
+    background: transparent;
+    width: 10px;
+    padding: 0px 20px;
+} */
+
+.tgCon .tgChat .sendMassage input[type="file"] {
+    display: none;
+}
+
+.tgCon .tgChat .sendMassage #mass {
+    flex: 1;
+    height: 100%;
+    background-color: transparent;
+    padding-left: 25px;
+    color: white;
+    font-size: 19px;
+    outline: none;
+    border: none;
+}
+
+.tgCon .tgChat .sendMassage #mass::placeholder {
+    color: #68747f;
+}
+.tgCon .tgChat .sendMassage .btns {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.tgCon .tgChat .sendMassage .btns button {
+    border: none;
+    background-color: transparent;
+    color: #68747f;
+    font-size: 28px;
 }

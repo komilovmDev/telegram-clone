@@ -1,8 +1,10 @@
-import { FaUser } from 'react-icons/fa'
-import { BsChatFill, BsCheckAll, BsCheck , BsEmojiSmile , BsFillMicFill } from 'react-icons/bs'
-import { BiSearch , BiCheckDouble } from 'react-icons/bi'
+import { FaUser, FaCheck } from 'react-icons/fa'
+import { BsChatFill, BsCheckAll, BsCheck, BsEmojiSmile, BsFillMicFill , BsMic} from 'react-icons/bs'
+import { BiSearch, BiCheckDouble } from 'react-icons/bi'
 import { IoCallSharp } from 'react-icons/io5'
 import { GoKebabVertical } from 'react-icons/go'
+import { FiCheck } from 'react-icons/fi'
+import {AiOutlinePaperClip} from 'react-icons/ai'
 import './tg.css'
 
 export default function TelegramHome() {
@@ -10,13 +12,13 @@ export default function TelegramHome() {
         <div className="tgCon">
             <div className="tgLeft">
                 <div className="tgLeft_Btns">
-                    <button className='active'><span>Shaxsiy</span><FaUser className='ix' size={'25px'}/></button>
-                    <button className=''><span>Guruhlar</span><BsChatFill className='ix'  size={'25px'} /></button>
+                    <button className='active'><span>Shaxsiy</span><FaUser className='ix' size={'25px'} /></button>
+                    <button className=''><span>Guruhlar</span><BsChatFill className='ix' size={'25px'} /></button>
                 </div>
             </div>
             <div className="tgUsers">
                 <div className="tgUsersSerach">
-                    <input type="text" placeholder='Search'/>
+                    <input type="text" placeholder='Search' />
                 </div>
                 <div className="tgUsers_users">
                     <div className="tgUsers_user">
@@ -37,8 +39,8 @@ export default function TelegramHome() {
             <div className="tgChat">
                 <div className="tgChat_userInfo">
                     <div className="tgChat_userInfo_userName">
-                        <span className='tgChat_userInfo_userName_name'></span>
-                        <span className="tgChat_userInfo_userName_online"></span>
+                        <span className='tgChat_userInfo_userName_name'>React</span>
+                        <span className="tgChat_userInfo_userName_online">last seen 20 minutes ago</span>
                     </div>
                     <div className="tgChatCallBtns">
                         <button><BiSearch /></button>
@@ -47,33 +49,33 @@ export default function TelegramHome() {
                     </div>
                 </div>
                 <div className="tgChatMassage">
-                    <div className="user">
-                        <img src="" alt="" />
-                        <div className="chat">
-                            <span className='massage'>Salom</span>
-                            <div className="timeandcheck">
-                                <span>14:00</span>
-                                <button><BsCheck /></button>
+                    <div className="chst">
+                        <div className="user">
+                            <div className="chat">
+                                <span className='massage'>Salom</span>
+                                <div className="timeandcheck">
+                                    <span>14:01</span>
+                                    <button><FiCheck /></button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="user2">
-                        <img src="" alt="" />
-                        <div className="chat">
-                            <span className='massage'>Salom</span>
-                            <div className="timeandcheck">
-                                <span>14:00</span>
-                                <button><BsCheck /></button>
+                        <div className="user2">
+                            <div className="chat">
+                                <span className='massage'>Alik</span>
+                                <div className="timeandcheck">
+                                    <span>14:28</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="sendMassage">
-                    <input type="file" />
-                    <input type="text" placeholder='Write a message...'/>
+                    <input id='file' type="file" />
+                    <label for="file" htmlFor="file"><AiOutlinePaperClip color='#68747f' size={'35px'}/></label>
+                    <input id='mass' type="text" placeholder='Write a message...' />
                     <div className="btns">
-                        <button><BsEmojiSmile/></button>
-                        <button><BsFillMicFill/></button>
+                        <button><BsEmojiSmile /></button>
+                        <button><BsMic /></button>
                     </div>
                 </div>
             </div>
