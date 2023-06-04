@@ -11,6 +11,10 @@ body {
     overflow-y: hidden;
 }
 
+.none {
+  display: none;
+}
+
 .tgCon {
   width: 100%;
   background: #0e1621;
@@ -396,4 +400,77 @@ body {
     background-color: transparent;
     color: #68747f;
     font-size: 28px;
+}
+
+.profilON {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.322);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.profilON .close {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.096);
+  z-index: 2;
+}
+
+.profilON .profil {
+  position: absolute;
+  width: 100%;
+  height: 100%; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profilON .profil .profilBox {
+  width: 500px;
+  height: 700px;
+  background-color: #17212b;
+  border-radius: 15px;
+  z-index: 3;
+}
+
+.profilON .profil .profilBox .profilBoxTop {
+  display: flex;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profilON .profil .profilBox .profilBoxTop span {
+  font-size: 23px;
+  font-weight: 500;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.profilON .profil .profilBox .profilBoxTop .btns {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.profilON .profil .profilBox .profilBoxTop .btns button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  font-size: 36px;
+  color: #68747f;
+  cursor: pointer;
+}
+
+.profilON .profil .profilBox .profilImg {
+  width: 100%;
+  height: 50%;
+}
+
+.profilON .profil .profilBox .profilImg img {
+  width: 100%;
 }
