@@ -196,6 +196,7 @@ body {
 }
 
 .tgCon .tgChat {
+  height: 100vh;
   display: flex;
   flex-grow: 1;
   flex-direction: column;
@@ -256,6 +257,7 @@ body {
     flex-grow: 1;
     gap: 15px;
     padding: 10px 20px;
+    overflow-y: auto;
 }
 
 .tgCon .tgChat .tgChatMassage .user {

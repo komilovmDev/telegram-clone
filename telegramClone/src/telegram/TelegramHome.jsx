@@ -2,16 +2,17 @@ import { FaUser, FaCheck } from 'react-icons/fa'
 import { BsChatFill, BsCheckAll, BsCheck, BsEmojiSmile, BsFillMicFill, BsMic } from 'react-icons/bs'
 import { BiSearch, BiCheckDouble } from 'react-icons/bi'
 import { IoCallSharp, IoClose } from 'react-icons/io5'
-import { IoMdClose } from 'react-icons/io'
+import { IoMdClose , IoMdSend} from 'react-icons/io'
 import { GoKebabVertical } from 'react-icons/go'
 import { FiCheck } from 'react-icons/fi'
 import { AiOutlinePaperClip } from 'react-icons/ai'
 import './tg.css'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 export default function TelegramHome() {
 
     const [isOpen, setIsOpen] = useState('none')
+    const massRef = useRef()
     const [chat, setChat] = useState([
         {
             id: 1,
@@ -20,24 +21,42 @@ export default function TelegramHome() {
         },
         {
             id: 2,
-            messege: 'Nerdasan',
+            messege: 'Kim Bu',
             time: '14:10'
         }
-    ])
+    ]);
+
     const [chat2, setChat2] = useState([
         {
             id: 1,
-            messege: 'Alik',
+            messege: 'Salom',
             time: '14:09'
         }
-    ])
-    
+    ]);
+
+    function SendMassage() {
+        setChat((prevChat) => [
+          ...prevChat,
+          {
+            id: prevChat.length + 1,
+            messege: massRef.current.value,
+            time: new Date().toLocaleTimeString(),
+          },
+        ]);
+      }
+
+      const users = [
+        {
+            id: 1,
+            name: 'React',
+            onlineTime: '12:22',
+            endMessege: chat.slice(-1)[0].messege
+        }
+      ]
     return (
         <>
             <div className={isOpen}>
-                <div className="close" onClick={() => setIsOpen('none')}>
-
-                </div>
+                <div className="close" onClick={() => setIsOpen('none')}></div>
                 <div className="profil">
                     <div className="profilBox">
                         <div className="profilBoxTop">
@@ -94,40 +113,37 @@ export default function TelegramHome() {
                     </div>
                     <div className="tgChatMassage">
                         <div className="chst">
-                            {
-                                chat.map(item => (
-                                    <div className="user">
-                                        <div className="chat">
-                                            <span className='massage'>{item.messege}</span>
-                                            <div className="timeandcheck">
-                                                <span>{item.time}</span>
-                                                <button><FiCheck /></button>
-                                            </div>
+                            {chat2.map(item => (
+                                <div className="user2" key={item.id}>
+                                    <div className="chat">
+                                        <span className='massage'>{item.messege}</span>
+                                        <div className="timeandcheck">
+                                            <span>{item.time}</span>
                                         </div>
                                     </div>
-                                ))
-                            }
-                            {
-                                chat2.map(item => (
-                                    <div className="user2">
-                                        <div className="chat">
-                                            <span className='massage'>{item.messege}</span>
-                                            <div className="timeandcheck">
-                                                <span>{item.time}</span>
-                                            </div>
+                                </div>
+                            ))}
+                            {chat.map(item => (
+                                <div className="user" key={item.id}>
+                                    <div className="chat">
+                                        <span className='massage'>{item.messege}</span>
+                                        <div className="timeandcheck">
+                                            <span>{item.time}</span>
+                                            <button><FiCheck /></button>
                                         </div>
                                     </div>
-                                ))
-                            }
+                                </div>
+                            ))}
                         </div>
                     </div>
                     <div className="sendMassage">
                         <input id='file' type="file" />
                         <label for="file" htmlFor="file"><AiOutlinePaperClip color='#68747f' size={'35px'} /></label>
-                        <input id='mass' type="text" placeholder='Write a message...' />
+                        <input ref={massRef} id='mass' type="text" placeholder='Write a message...' />
                         <div className="btns">
                             <button><BsEmojiSmile /></button>
                             <button><BsMic /></button>
+                            <button onClick={SendMassage} type='submit'><IoMdSend/></button>
                         </div>
                     </div>
                 </div>
