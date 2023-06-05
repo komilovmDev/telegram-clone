@@ -74,7 +74,7 @@ body {
 }
 
 .tgCon .tgUsers {
-  width: 420px;
+  min-width: 420px;
   height: 100vh;
   background-color: #17212b;
   border-right: 1px solid black;
@@ -324,6 +324,7 @@ body {
     gap: 15px;
     padding: 10px 20px;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .tgCon .tgChat .tgChatMassage .user {
@@ -345,6 +346,8 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    position: relative;
+    padding-right: 85px;
 }
 
 .tgCon .tgChat .tgChatMassage .user .chat .massage {
@@ -358,6 +361,9 @@ body {
     justify-content: center;
     gap: 5px;
     transform: translateY(5px);
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
 }
 
 .tgCon .tgChat .tgChatMassage .user .chat .timeandcheck span {
