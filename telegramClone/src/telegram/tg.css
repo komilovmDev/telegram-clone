@@ -565,7 +565,7 @@ body {
     height: 100vh;
   }
   .tgCon .tgUsers {
-    min-width: 100%;
+    min-width:  calc(100% - 80px);
   }
   .tgCon .tgChat {
     display: none;

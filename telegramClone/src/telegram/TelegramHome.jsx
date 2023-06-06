@@ -94,7 +94,16 @@ export default function TelegramHome() {
         btn2Ref.current.classList.add('active');
     }
 
-    const [chatIsopen , setChatIsopen] = useState('tgChat on')
+    const [chatIsopen, setChatIsopen] = useState('tgChat on')
+
+    function checkDisplayWidth() {
+        const width = window.innerWidth;
+        if (width < 900) {
+            console.log('true');
+        }
+    }
+
+    checkDisplayWidth();
 
     return (
         <>
