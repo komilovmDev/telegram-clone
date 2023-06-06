@@ -347,7 +347,7 @@ body {
     align-items: center;
     gap: 10px;
     position: relative;
-    padding-right: 85px;
+    padding-right: 140px;
 }
 
 .tgCon .tgChat .tgChatMassage .user .chat .massage {
@@ -547,4 +547,35 @@ body {
 
 .profilON .profil .profilBox .profilImg img {
   width: 100%;
+}
+
+.tgCon .on {
+
+}
+
+@media screen and (max-width: 980px) {
+  .tgCon .tgUsers {
+    min-width: 300px
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .tgCon {
+    width: 100%;
+    height: 100vh;
+  }
+  .tgCon .tgUsers {
+    min-width: 100%;
+  }
+  .tgCon .tgChat {
+    display: none;
+  }
+  .tgCon .on {
+      position: absolute;
+      left: 80px;
+      width: 100%;
+      height: 100vh;
+      background-color: #0e1621;
+      z-index: 9;
+  } 
 }

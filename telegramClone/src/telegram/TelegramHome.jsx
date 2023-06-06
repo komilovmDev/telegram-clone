@@ -6,26 +6,26 @@ import { IoMdClose, IoMdSend } from 'react-icons/io'
 import { GoKebabVertical } from 'react-icons/go'
 import { FiCheck } from 'react-icons/fi'
 import { AiOutlinePaperClip } from 'react-icons/ai'
-import {MdOutlineBlock} from 'react-icons/md'
-import {BsVolumeMute} from 'react-icons/bs'
+import { MdOutlineBlock } from 'react-icons/md'
+import { BsVolumeMute } from 'react-icons/bs'
 import './tg.css'
 import { useEffect, useRef, useState } from 'react'
 
 export default function TelegramHome() {
 
     const [isOpen, setIsOpen] = useState('none')
-    const [isOpenminSet , setIsOpenminSet] = useState('none')
+    const [isOpenminSet, setIsOpenminSet] = useState('none')
     const massRef = useRef()
     const [chat, setChat] = useState([
         {
             id: 1,
             messege: 'Salom',
-            time: '14:01'
+            time: "11:23:13 AM"
         },
         {
             id: 2,
             messege: 'Kim Bu',
-            time: '14:10'
+            time: "10:23:13 AM"
         }
     ]);
 
@@ -33,19 +33,21 @@ export default function TelegramHome() {
         {
             id: 1,
             messege: 'Salom',
-            time: '14:09'
+            time: "01:23:13 AM"
         }
     ]);
 
     function SendMassage() {
-        setChat((prevChat) => [
-            ...prevChat,
-            {
-                id: prevChat.length + 1,
-                messege: massRef.current.value,
-                time: new Date().toLocaleTimeString(),
-            },
-        ]);
+        if (massRef.current.value !== "") {
+            setChat((prevChat) => [
+                ...prevChat,
+                {
+                    id: prevChat.length + 1,
+                    messege: massRef.current.value,
+                    time: new Date().toLocaleTimeString(),
+                },
+            ]);
+        }
     }
 
     const users = [
@@ -76,9 +78,9 @@ export default function TelegramHome() {
         }
     ]
 
-    
 
-    const [chats , setChats] = useState(users) 
+
+    const [chats, setChats] = useState(users)
 
     const btn1Ref = useRef()
     const btn2Ref = useRef()
@@ -91,6 +93,8 @@ export default function TelegramHome() {
         btn1Ref.current.classList.remove('active');
         btn2Ref.current.classList.add('active');
     }
+
+    const [chatIsopen , setChatIsopen] = useState('tgChat on')
 
     return (
         <>
@@ -142,7 +146,7 @@ export default function TelegramHome() {
                         }
                     </div>
                 </div>
-                <div className="tgChat">
+                <div className={chatIsopen}>
                     <div className="tgChat_userInfo">
                         <div className="tgChat_userInfo_userName" onClick={() => setIsOpen('profilON')}>
                             <span className='tgChat_userInfo_userName_name'>React</span>
@@ -156,8 +160,8 @@ export default function TelegramHome() {
                         <div className={isOpenminSet}>
                             <div className="close" onClick={() => setIsOpenminSet('none')}></div>
                             <div className="prmSetseting">
-                                <button><MdOutlineBlock size={'26px'}/><span>Block User</span></button>
-                                <button><BsVolumeMute size={'30px'}/><span>Ovozsiz</span></button>
+                                <button><MdOutlineBlock size={'26px'} /><span>Block User</span></button>
+                                <button><BsVolumeMute size={'30px'} /><span>Ovozsiz</span></button>
                             </div>
                         </div>
                     </div>
