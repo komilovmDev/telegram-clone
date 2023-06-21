@@ -15,6 +15,10 @@ body {
   display: none;
 }
 
+.ac {
+  display: none;
+}
+
 .tgCon {
   width: 100%;
   background: #0e1621;
@@ -327,11 +331,19 @@ body {
     overflow-x: hidden;
 }
 
+.tgCon .tgChat .tgChatMassage::-webkit-scrollbar {
+  background: rgba(255, 0, 0, 0);
+}
+
+.tgCon .tgChat .tgChatMassage .ac {
+  display: none;
+  position: absolute;
+}
+
 .tgCon .tgChat .tgChatMassage .user {
     display: flex;
     gap: 5px;
 }
-
 
 .tgCon .tgChat .tgChatMassage .user img {
     width: 50px;
@@ -347,7 +359,7 @@ body {
     align-items: center;
     gap: 10px;
     position: relative;
-    padding-right: 140px;
+    padding-right: 180px;
 }
 
 .tgCon .tgChat .tgChatMassage .user .chat .massage {
@@ -578,4 +590,33 @@ body {
       background-color: #0e1621;
       z-index: 9;
   } 
+}
+
+.smaylek{
+  background-color: rgba(14, 14, 14, 0.329);
+  position: absolute;
+  backdrop-filter: blur(5px);
+  right: 0px;
+  bottom: 60px;
+  width: 200px;
+  height: 300px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+.Window{
+  display: none;
+}
+.Btn__Smilek{
+  cursor: pointer;
+}
+.__smile{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgb(39, 39, 39);
+}
+.__smile:hover{
+  background-color: whitesmoke;
 }
